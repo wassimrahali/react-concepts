@@ -1,11 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class File extends Component {
+// Define the interface for the props
+interface FileProps {
+  name: string;
+  prenom: string;
+}
+
+export default class File extends Component<FileProps> {
   render() {
+    const { name, prenom } = this.props;
     return (
-   <div>
-    <p>{this.props.name} {this.props.prenom}</p>
-   </div>
-    )
+      <div>
+        <p>{name} {prenom}</p>
+      </div>
+    );
   }
 }
