@@ -1,9 +1,7 @@
 import { Component } from "react";
 import File from "./Componnents/File";
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   // myMethod(prenom){
   //   return <span>{prenom}</span>
   // }
