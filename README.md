@@ -1,3 +1,12 @@
+# React Concepts
+
+This repository covers various React concepts.
+
+## Initial Setup
+
+To initialize the repository and push your first commit to GitHub, use the following commands:
+
+```bash
 git init
 git add README.md
 git commit -m "first commit"
