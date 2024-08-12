@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TeamMembre from "./TeamMembre";
-import info from "./data"; // Adjust the path as necessary
+import info from "./data"; 
 
 export default class Team extends Component {
   constructor() {
