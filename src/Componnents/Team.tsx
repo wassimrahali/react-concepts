@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import  { Component } from "react";
 import TeamMembre from "./TeamMembre";
-
 import info from "./data"; 
+
 export default class Team extends Component {
   constructor() {
     super();
@@ -15,7 +15,8 @@ export default class Team extends Component {
   }
 
   render() {
-    return <div>{this.renderMembers(this.state.info)}
-    </div>;
+    const { info } = this.state;
+
+    return <div>{this.renderMembers(info)}</div>;
   }
 }
