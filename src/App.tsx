@@ -2,6 +2,7 @@ import { Component } from "react";
 // import File from "./Componnents/File";
 import Team from "./Componnents/Team";
 import Event from "./Componnents/Event";
+import EventTeam from "./Componnents/EventTeam";
 export default class App extends Component {
   // myMethod(prenom){
   //   return <span>{prenom}</span>
@@ -27,11 +28,12 @@ export default class App extends Component {
         <Team /> */}
 
 
-        <Event />
 
 
+{/* <Team /> */}
+{/* <Event /> */}
 
-
+<EventTeam />
       </div>
     );
   }
