@@ -29,7 +29,12 @@ export default class EventTeam extends Component {
     return (
       <div>
         {this.newMembres}
-        <button onClick={this.clickEvent}>Add Team </button>
+        <button 
+  onClick={this.clickEvent} 
+  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+>
+  Add Team
+</button>
       </div>
     );
   }
