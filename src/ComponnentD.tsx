@@ -1,9 +1,14 @@
+import { useContext } from "react"
+import { userContext } from "./ComponnentA"
 
-function ComponnentD({user}) {
+ 
+function ComponnentD() {
+  const user = useContext(userContext)
   return (
     <div className='box'>ComponnentD
+
     
-    <h1>{user}</h1>
+    <h1>{`Hello ${user}`}</h1>
     </div>
   )
 }
