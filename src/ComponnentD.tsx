@@ -1,14 +1,17 @@
 import { useContext } from "react"
 import { userContext } from "./ComponnentA"
 
- 
 function ComponnentD() {
-  const user = useContext(userContext)
-  return (
-    <div className='box'>ComponnentD
+  const userContextValue = useContext(userContext)
+  if (!userContextValue) {
+    return <div>No user context provided</div>
+  }
 
-    
-    <h1>{`Hello ${user}`}</h1>
+const { user } = userContextValue
+  return (
+    <div className='box'>
+      ComponnentD
+      <h1>{`Hello ${user}`}</h1>
     </div>
   )
 }
