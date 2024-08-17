@@ -1,6 +1,5 @@
 import  { useReducer } from "react";
 
-// Define Task and State interfaces
 interface Task {
   id: string;
   description: string | undefined;
@@ -17,7 +16,6 @@ interface Action {
   payload?: string;
 }
 
-// Reducer function to manage tasks
 function reducer(state: State, action: Action) {
   switch (action.type) {
     case "addTask": {
@@ -66,7 +64,6 @@ function TaskManagerTable() {
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-      {/* Task Manager Header */}
       <div className="max-w-lg">
         <h3 className="text-gray-800 text-xl font-bold sm:text-2xl">
           Task Manager
