@@ -12,7 +12,7 @@ const navigation = [
     { title: "Pricing", path: "javascript:void(0)" }
 ]
   return (
-<nav className="bg-white border-b w-full md:static md:text-sm md:border-none">
+<nav className="bg-slate-900 border-b w-full md:static md:text-sm md:border-none">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
                 <a href="javascript:void(0)">
@@ -24,7 +24,7 @@ const navigation = [
                     />
                 </a>
                 <div className="md:hidden">
-                    <button className="text-gray-500 hover:text-gray-800"
+                    <button className="text-white hover:text-gray-800"
                         onClick={() => setState(!state)}
                     >
                         {
@@ -46,7 +46,7 @@ const navigation = [
                     {
                         navigation.map((item, idx) => {
                             return (
-                                <li key={idx} className="text-gray-700 hover:text-indigo-600">
+                                <li key={idx} className="text-white hover:text-indigo-600">
                                     <a href={item.path} className="block">
                                         {item.title}
                                     </a>
@@ -57,7 +57,7 @@ const navigation = [
                     <span className='hidden w-px h-6 bg-gray-300 md:block'></span>
                     <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
                         <li>
-                            <a href="javascript:void(0)" className="block py-3 text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none">
+                            <a href="javascript:void(0)" className="block py-3 text-center text-white hover:text-indigo-600 border rounded-lg md:border-none">
                                 Log in
                             </a>
                         </li>

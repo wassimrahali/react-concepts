@@ -89,7 +89,7 @@ function TaskManagerTable() {
   };
 
   return (
-    <div className="pt-8 max-w-screen-xl mx-auto px-4 md:px-8">
+    <div className="pt-8 max-w-screen-xl mx-auto px-4 md:px-8 ">
       <div className="max-w-lg">
         <h3 className="text-gray-800 text-xl font-bold sm:text-2xl">
           Task Manager
@@ -132,7 +132,7 @@ function TaskManagerTable() {
         </div>
       </div>
 
-      <div className="mt-12 shadow-sm border rounded-lg overflow-x-auto">
+      <div className="mt-12 shadow-sm border rounded-lg overflow-x-auto mb-5">
         <table className="w-full table-auto text-sm text-left">
           <thead className="bg-gray-50 text-gray-600 font-medium border-b">
             <tr>
