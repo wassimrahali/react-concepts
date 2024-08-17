@@ -58,12 +58,12 @@ const navigation = [
                     <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
                         <li>
                             <a href="javascript:void(0)" className="block py-3 text-center text-white hover:text-indigo-600 border rounded-lg md:border-none">
-                                Log in
+                               Sign in
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" className="block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-500 active:bg-indigo-700 active:shadow-none shadow md:inline">
-                                Sign in
+                                Sign up
                             </a>
                         </li>
                     </div>
