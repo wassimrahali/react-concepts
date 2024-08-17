@@ -1,11 +1,11 @@
-import _Reducer from "./_Reducer"
+import ReducerTaskManager from "./ReducerTaskManager"
 
 
 function App() {
 
   return (
   <>
-  <_Reducer />
+  <ReducerTaskManager />
   </>
   )
 }
