@@ -1,11 +1,11 @@
-import Reducer from "./Reducer"
+import _Reducer from "./_Reducer"
 
 
 function App() {
 
   return (
   <>
-  <Reducer />
+  <_Reducer />
   </>
   )
 }
