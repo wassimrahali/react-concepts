@@ -40,7 +40,7 @@ export default function Bg() {
         {/* Starfield Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Canvas>
-            <Stars radius={50} count={2500} factor={4} fade speed={2} />
+            <Stars radius={100} count={5500} factor={3} fade speed={4} />
           </Canvas>
         </div>
       </motion.section>
