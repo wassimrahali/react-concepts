@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-import React from 'react'
 
 function Navbar() {
     const [state, setState] = useState(false)

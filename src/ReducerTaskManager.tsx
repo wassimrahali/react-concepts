@@ -1,9 +1,9 @@
-import React, { useReducer } from "react";
+import  { useReducer } from "react";
 
 // Define Task and State interfaces
 interface Task {
   id: string;
-  description: string;
+  description: string | undefined;
   completed: boolean;
 }
 
