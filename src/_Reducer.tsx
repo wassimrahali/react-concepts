@@ -53,8 +53,7 @@ function _Reducer() {
       
       {state.error && <div  style={{ color: "red" }}>{state.error}</div>}
       <button
-        onClick={() => {
-          const input = (document.getElementById("itemInput") as HTMLInputElement).value;
+        onClick={() => { const input = (document.getElementById("itemInput") as HTMLInputElement).value;
           dispatch({ type: "add", payload: input });
         }}
       >

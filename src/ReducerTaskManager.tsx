@@ -1,4 +1,4 @@
-import React, { act, useReducer } from "react";
+import React, { useReducer } from "react";
 
 interface Task {
   id: string;
@@ -7,25 +7,49 @@ interface Task {
 }
 
 interface State {
-  task: Task[];
+  tasks: Task[];
   error: string | null;
 }
 
 interface Action {
   type: "addTask" | "removeTask" | "resetTask" | "toggleTaskCompletion";
-  playload?: string;
+  payload?: string;
 }
-function reducer(state:State, action: Action) {
+function reducer(state: State, action: Action) {
   switch (action.type) {
-    case "addTask":{
-      if(!action.playload || action.playload.trim()==="" ){
-        return {...state, error: "Task cannot be empty" };
+    case "addTask": {
+      if (action.payload?.trim() === "") {
+        return { ...state, error: "Task cannot be empty" };
       }
-      return{...state,task:[...state.task,action.playload]}
+      const newTask: Task = {
+        id: Date.now().toString(), // Generate a unique ID
+        description: action.payload,
+        completed: false,
+      };
+
+      return { ...state, tasks: [...state.tasks, newTask] };
     }
-    case "removeTask":
-    case "resetTask":
-    case "toggleTaskCompletion":
+    case "removeTask": {
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.id !== action.payload),
+        error: null,
+      };
+    }
+    case "resetTask": {
+      return { ...state, tasks: [], error: null };
+    }
+    case "toggleTaskCompletion": {
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload
+            ? { ...task, completed: !task.completed }
+            : task
+        ),
+        error: null,
+      };
+    }
     default:
       return state;
   }
@@ -33,21 +57,40 @@ function reducer(state:State, action: Action) {
 
 function ReducerTaskManager() {
   const [state, dispatch] = useReducer(reducer, {
-    task: [],
+    tasks: [],
     error: null,
-    id: null,
-    description: "",
-    completed: false,
   });
   return (
     <div>
-<input type="text" id="itemInput" placeholder="Write Task " />
-      
-      {state.error && <div  style={{ color: "red" }}>{state.error}</div>}      <button onClick={() => dispatch({type:'addTask'})}>Add Task</button>
-      <button onClick={() => dispatch({})}>Remove Task</button>
-      <button onClick={() => dispatch({})}>Rest Task</button>
+      <h1>Task Manager</h1>
+      <ul>
+        {state.tasks.map(task => (
+          <li key={task.id}>
+            {task.description} - {task.completed ? "Completed" : "Incomplete"}
+            <button onClick={() => dispatch({ type: "toggleTaskCompletion", payload: task.id })}>
+              Toggle Completion
+            </button>
+            <button onClick={() => dispatch({ type: "removeTask", payload: task.id })}>
+              Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+      <input type="text" id="taskInput" placeholder="Enter a task" />
+      {state.error && <div style={{ color: "red" }}>{state.error}</div>}
+      <button
+        onClick={() => {
+          const input = (document.getElementById("taskInput") as HTMLInputElement).value;
+          dispatch({ type: "addTask", payload: input });
+        }}
+      >
+        Add Task
+      </button>
+      <button onClick={() => dispatch({ type: "resetTask" })}>
+        Reset Tasks
+      </button>
     </div>
   );
 }
 
-export default ReducerTaskManager;
+export default ReducerTaskManager
