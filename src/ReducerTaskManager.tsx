@@ -81,7 +81,7 @@ function TaskManagerTable() {
           className="border p-2 rounded w-full"
         />
         {state.error && <div className="text-red-500 mt-2">{state.error}</div>}
-        <div className="space-x-10 space-y-10">
+        <div className="space-x-5 space-y-10">
           <button
             onClick={() => {
               const input = (
@@ -98,7 +98,8 @@ function TaskManagerTable() {
             onClick={() => dispatch({ type: "resetTask" })}
             className="block py-3 px-4 font-medium text-center text-white bg-red-600 hover:bg-green-500 active:bg--700 active:shadow-none rounded-lg shadow md:inline"
           >
-            Reset Tasks
+            <i className="ri-loop-left-fill">  Reset Tasks
+            </i>
           </button>
         </div>
       </div>
@@ -138,9 +139,9 @@ function TaskManagerTable() {
                           payload: task.id,
                         })
                       }
-                      className="bg-indigo-600 text-white py-1 px-2 rounded mr-2"
+                      className="bg-green-600 text-white py-1 px-2 rounded mr-2"
                     >
-                      Toggle
+                      <i className="ri-save-3-fill"></i>
                     </button>
                     <button
                       onClick={() =>
