@@ -1,3 +1,4 @@
+import img from './assets/logo-dark.b0d0c4d1.svg'
 
 function Footer() {
     const footerNavs = [
@@ -22,7 +23,7 @@ function Footer() {
     <footer className="pt-10 bg-slate-950">
     <div className="max-w-screen-xl mx-auto px-4 text-white md:px-8">
         <div className="space-y-6 sm:max-w-md sm:mx-auto sm:text-center">
-            <img src="https://www.floatui.com/logo.svg" className="w-32 sm:mx-auto" />
+            <img src={img} className="w-32 sm:mx-auto" />
             <p>
                 Nulla auctor metus vitae lectus iaculis, vel euismod massa efficitur.
             </p>

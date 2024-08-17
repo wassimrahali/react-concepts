@@ -91,10 +91,10 @@ function TaskManagerTable() {
   return (
     <div className="pt-8 max-w-screen-xl mx-auto px-4 md:px-8 ">
       <div className="max-w-lg">
-        <h3 className="text-gray-800 text-xl font-bold sm:text-2xl">
+        <h3 className="text-white text-xl font-bold sm:text-2xl">
           Task Manager
         </h3>
-        <p className="text-gray-600 mt-2">
+        <p className="text-white mt-2">
           Add and manage your tasks effectively in a table format.
         </p>
       </div>
@@ -104,7 +104,7 @@ function TaskManagerTable() {
           type="text"
           id="taskInput"
           placeholder="Enter a task"
-          className="border p-2 rounded w-full"
+          className="text-black border p-2 rounded w-full"
         />
         {state.error && (
           <div className="text-red-500 mt-2 p-2 border border-red-400 rounded bg-red-100">
@@ -119,13 +119,13 @@ function TaskManagerTable() {
         <div className="flex flex-col space-y-4">
           <button
             onClick={handleAddTask}
-            className="mt-5 block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline font-custom"
+            className="mt-5 block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-500 active:bg-indigo-700 active:shadow-none  shadow md:inline font-custom"
           >
             <i className="ri-play-list-add-line" /> Add Task
           </button>
           <button
             onClick={handleResetTasks}
-            className="block py-3 px-4 font-medium text-center text-white bg-red-600 hover:bg-red-500 active:bg-red-700 active:shadow-none rounded-lg shadow md:inline font-custom"
+            className="block py-3 px-4 font-medium text-center text-white bg-red-600 hover:bg-red-500 active:bg-red-700 active:shadow-none shadow md:inline font-custom"
           >
             <i className="ri-loop-left-fill" /> Reset Tasks
           </button>
@@ -189,7 +189,7 @@ function TaskManagerTable() {
             ) : (
               <tr>
                 <td
-                  className="px-6 py-4 whitespace-nowrap"
+                  className="text-white px-6 py-4 whitespace-nowrap"
                   colSpan={3}
                   style={{ textAlign: "center" }}
                 >
@@ -205,8 +205,8 @@ function TaskManagerTable() {
       {showConfirmReset && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
-            <h3 className="text-lg font-bold mb-4">Confirm Reset</h3>
-            <p className="mb-4">Are you sure you want to reset all tasks?</p>
+            <h3 className="text-slate-950 font-bold mb-4">Confirm Reset</h3>
+            <p className=" text-slate-950  mb-4">Are you sure you want to reset all tasks?</p>
             <div className="flex justify-end space-x-4">
               <button
                 onClick={confirmReset}
