@@ -1,4 +1,4 @@
-import  { useReducer } from "react";
+import { useReducer, useState } from "react";
 
 interface Task {
   id: string;
@@ -61,9 +61,35 @@ function TaskManagerTable() {
     tasks: [],
     error: null,
   });
+  const [showConfirmReset, setShowConfirmReset] = useState(false);
+  const [taskAddedAlert, setTaskAddedAlert] = useState(false);
+
+  const handleAddTask = () => {
+    const input = (document.getElementById("taskInput") as HTMLInputElement).value;
+    if (input.trim() === "") {
+      dispatch({ type: "addTask", payload: "" });
+      return;
+    }
+    dispatch({ type: "addTask", payload: input });
+    setTaskAddedAlert(true);
+    setTimeout(() => setTaskAddedAlert(false), 3000); // Hide alert after 3 seconds
+  };
+
+  const handleResetTasks = () => {
+    setShowConfirmReset(true);
+  };
+
+  const confirmReset = () => {
+    dispatch({ type: "resetTask" });
+    setShowConfirmReset(false);
+  };
+
+  const cancelReset = () => {
+    setShowConfirmReset(false);
+  };
 
   return (
-    <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+    <div className="pt-8 max-w-screen-xl mx-auto px-4 md:px-8">
       <div className="max-w-lg">
         <h3 className="text-gray-800 text-xl font-bold sm:text-2xl">
           Task Manager
@@ -73,33 +99,35 @@ function TaskManagerTable() {
         </p>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-4 container mx-auto p-5">
         <input
           type="text"
           id="taskInput"
           placeholder="Enter a task"
           className="border p-2 rounded w-full"
         />
-        {state.error && <div className="text-red-500 mt-2">{state.error}</div>}
-        <div className="space-x-5 space-y-10">
+        {state.error && (
+          <div className="text-red-500 mt-2 p-2 border border-red-400 rounded bg-red-100">
+            {state.error}
+          </div>
+        )}
+        {taskAddedAlert && (
+          <div className="text-green-500 mt-2 p-2 border border-green-400 rounded bg-green-100">
+            Task added successfully!
+          </div>
+        )}
+        <div className="flex flex-col space-y-4">
           <button
-            onClick={() => {
-              const input = (
-                document.getElementById("taskInput") as HTMLInputElement
-              ).value;
-              dispatch({ type: "addTask", payload: input });
-            }}
-            className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
+            onClick={handleAddTask}
+            className="mt-5 block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline font-custom"
           >
-            <i className="ri-play-list-add-line" >             Add Task
-             </i>
+            <i className="ri-play-list-add-line" /> Add Task
           </button>
           <button
-            onClick={() => dispatch({ type: "resetTask" })}
-            className="block py-3 px-4 font-medium text-center text-white bg-red-600 hover:bg-green-500 active:bg--700 active:shadow-none rounded-lg shadow md:inline"
+            onClick={handleResetTasks}
+            className="block py-3 px-4 font-medium text-center text-white bg-red-600 hover:bg-red-500 active:bg-red-700 active:shadow-none rounded-lg shadow md:inline font-custom"
           >
-            <i className="ri-loop-left-fill">  Reset Tasks
-            </i>
+            <i className="ri-loop-left-fill" /> Reset Tasks
           </button>
         </div>
       </div>
@@ -141,7 +169,11 @@ function TaskManagerTable() {
                       }
                       className="bg-green-600 text-white py-1 px-2 rounded mr-2"
                     >
-                      <i className="ri-save-3-fill"></i>
+                      {task.completed ? (
+                        <i className="ri-checkbox-line"></i> // Checked
+                      ) : (
+                        <i className="ri-checkbox-blank-line"></i> // Unchecked
+                      )}
                     </button>
                     <button
                       onClick={() =>
@@ -149,8 +181,7 @@ function TaskManagerTable() {
                       }
                       className="bg-red-600 text-white py-1 px-2 rounded"
                     >
-                      <i className="ri-delete-bin-6-fill"> </i>
-                      Remove
+                      <i className="ri-delete-bin-6-fill" /> Remove
                     </button>
                   </td>
                 </tr>
@@ -169,6 +200,30 @@ function TaskManagerTable() {
           </tbody>
         </table>
       </div>
+
+      {/* Confirmation Modal */}
+      {showConfirmReset && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
+            <h3 className="text-lg font-bold mb-4">Confirm Reset</h3>
+            <p className="mb-4">Are you sure you want to reset all tasks?</p>
+            <div className="flex justify-end space-x-4">
+              <button
+                onClick={confirmReset}
+                className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500"
+              >
+                Yes, Reset
+              </button>
+              <button
+                onClick={cancelReset}
+                className="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-200"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
