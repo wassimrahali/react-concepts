@@ -20,7 +20,7 @@ function Footer() {
         }
     ]
   return (
-    <footer className="pt-10 bg-slate-950">
+    <footer className="pt-10 ">
     <div className="max-w-screen-xl mx-auto px-4 text-white md:px-8">
         <div className="space-y-6 sm:max-w-md sm:mx-auto sm:text-center">
             <img src={img} className="w-32 sm:mx-auto" />
@@ -28,7 +28,7 @@ function Footer() {
                 Nulla auctor metus vitae lectus iaculis, vel euismod massa efficitur.
             </p>
             <div className="items-center gap-x-3 space-y-3 sm:flex sm:justify-center sm:space-y-0">
-                <a href="javascript:void(0)" className="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none">
+                <a style={{backgroundColor:'#C2F915',color:'#03003A'}} href="javascript:void(0)" className="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none">
                     Let's get started
                 </a>
                 <a href="javascript:void(0)" className="flex items-center justify-center gap-x-2 py-2 px-4 text-white hover:text-white font-medium duration-150 active:bg-white border rounded-lg md:inline-flex">

@@ -119,12 +119,14 @@ function TaskManagerTable() {
         <div className="flex flex-col space-y-4">
           <button
             onClick={handleAddTask}
-            className="mt-5 block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-500 active:bg-indigo-700 active:shadow-none  shadow md:inline font-custom"
+            style={{backgroundColor:'#C2F915',color :'#03003A'}}
+            className="mt-5 block py-3 px-4 font-medium text-center  active:shadow-none  shadow md:inline font-custom"
           >
-            <i className="ri-play-list-add-line" /> Add Task
+            <i className="ri-play-list-add-line" /> <b>Add Task</b>
           </button>
           <button
             onClick={handleResetTasks}
+            style={{backgroundColor:'#03003A'}}
             className="block py-3 px-4 font-medium text-center text-white bg-red-600 hover:bg-red-500 active:bg-red-700 active:shadow-none shadow md:inline font-custom"
           >
             <i className="ri-loop-left-fill" /> Reset Tasks
@@ -167,7 +169,7 @@ function TaskManagerTable() {
                           payload: task.id,
                         })
                       }
-                      className="bg-green-600 text-white py-1 px-2 rounded mr-2"
+                      style={{backgroundColor:'#C2F915',color:'#03003A'}}  className="bg-green-600 text-white py-1 px-2 rounded mr-2"
                     >
                       {task.completed ? (
                         <i className="ri-checkbox-line"></i> // Checked
@@ -181,7 +183,7 @@ function TaskManagerTable() {
                       }
                       className="bg-red-600 text-white py-1 px-2 rounded"
                     >
-                      <i className="ri-delete-bin-6-fill" /> Remove
+                      <i className="ri-delete-bin-6-fill" /> 
                     </button>
                   </td>
                 </tr>

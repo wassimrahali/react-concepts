@@ -30,11 +30,13 @@ export default function Bg() {
           scale, // Animate scale based on scroll
           opacity, // Animate opacity based on scroll
         }}
-        className="relative min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200"
+        className="relative min-h-screen overflow-hidden bg-gray-950  text-gray-200"
       >
         {/* Main Content */}
-        <div className="relative z-10">
-          <TaskManagerTable />
+        <div className="relative z-10 space-y-10 m-0 p-0">
+        <TaskManagerTable />
+          <Footer />
+
         </div>
 
         {/* Starfield Background */}
@@ -43,9 +45,9 @@ export default function Bg() {
             <Stars radius={100} count={5500} factor={3} fade speed={4} />
           </Canvas>
         </div>
+
       </motion.section>
 
-      <Footer />
     </>
   );
 }

@@ -62,7 +62,7 @@ const navigation = [
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" className="block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-500 active:bg-indigo-700 active:shadow-none shadow md:inline">
+                            <a style={{backgroundColor:'#C2F915',color:'#03003A'}}href="javascript:void(0)" className="block py-3 px-4 font-medium text-center text-white bg-blue-600 hover:bg-blue-500 active:bg-indigo-700 active:shadow-none shadow md:inline">
                                 Sign up
                             </a>
                         </li>
