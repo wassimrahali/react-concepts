@@ -104,7 +104,7 @@ function TaskManagerTable() {
           type="text"
           id="taskInput"
           placeholder="Enter a task"
-          className="text-black border p-2 rounded w-full"
+          className="text-white border p-2 rounded w-full"
         />
         {state.error && (
           <div className="text-red-500 mt-2 p-2 border border-red-400 rounded bg-red-100">
