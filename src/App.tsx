@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       {isLoading ? (
-        <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div className='bg-slate-950' style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <progress className="progress w-56"></progress>
         </div>
       ) : (
