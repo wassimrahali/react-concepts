@@ -132,7 +132,7 @@ function TaskManagerTable() {
         </div>
       </div>
 
-      <div className="mt-12 shadow-sm border rounded-lg overflow-x-auto mb-5">
+      <div className="mt-12 shadow-sm border rounded-lg overflow-x-hidden mb-5">
         <table className="w-full table-auto text-sm text-left">
           <thead className="bg-gray-50 text-gray-600 font-medium border-b">
             <tr>
@@ -141,7 +141,7 @@ function TaskManagerTable() {
               <th className="py-3 px-6">Actions</th>
             </tr>
           </thead>
-          <tbody className="text-gray-600 divide-y">
+          <tbody className="text-white divide-y">
             {state.tasks.length > 0 ? (
               state.tasks.map((task) => (
                 <tr key={task.id}>
