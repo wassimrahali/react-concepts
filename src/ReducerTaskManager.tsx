@@ -204,7 +204,7 @@ function TaskManagerTable() {
       {/* Confirmation Modal */}
       {showConfirmReset && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
+          <div className="bg-white p-6 rounded-lg shadow-lg sm:w-1/3">
             <h3 className="text-slate-950 font-bold mb-4">Confirm Reset</h3>
             <p className=" text-slate-950  mb-4">Are you sure you want to reset all tasks?</p>
             <div className="flex justify-end space-x-4">

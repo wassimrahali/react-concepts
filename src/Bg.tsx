@@ -13,7 +13,7 @@ export default function Bg() {
   const { scrollYProgress } = useScroll(); // Tracks how far you've scrolled (0 - 1)
   
   // Map scroll progress to scale (between 1 and 1.2)
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1]);
+  const scale = useTransform(scrollYProgress, [1, 4], [1, 1.05]);
 
   // Map scroll progress to opacity (fades out slightly)
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
